@@ -3,19 +3,37 @@ import './index.css'
 import { BrowserRouter , Routes, Route, Link } from 'react-router-dom'
 import Home from "./pages/Home.jsx"
 import About from "./pages/About.jsx"
+import Vans from "./pages/Vans.jsx"
+import VanDetail from "./pages/VanDetail.jsx"
+import Layout from "./components/Layout.jsx"
+import Dashboard from "./pages/Dashboard.jsx"
+import Income from "./pages/Income.jsx"
+import Reviews from "./pages/Reviews.jsx"
+import HostLayout  from "./pages/HostLayout.jsx"
+
+import { startMirage } from '../server.js';
+
+if(process.env.NODE_ENV === 'development'){
+  startMirage();
+}
+
 
 function App() {
 return (
   <BrowserRouter>
-  <header>
-    <Link className="site-logo" to="/">#VanLife</Link>
-    <nav>
-      <Link to="/about">About</Link>
-    </nav>
-  </header>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About/>} /> 
+   <Routes>
+     <Route element={<Layout />} >
+      <Route index element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="vans" element={<Vans />} />
+      <Route path="vans/:id" element={<VanDetail />} />
+
+      <Route path="host" element={<HostLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="income" element={<Income />} />
+          <Route path="reviews" element={<Reviews />} />
+       </Route> 
+     </Route>
     </Routes>
     </BrowserRouter>
   )
@@ -24,3 +42,5 @@ return (
 createRoot(document.getElementById('root')).render(
   <App />
 )
+
+
