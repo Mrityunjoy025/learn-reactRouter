@@ -1,15 +1,15 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { BrowserRouter , Routes, Route, Link } from 'react-router-dom'
-import Home from "./pages/Home.jsx"
-import About from "./pages/About.jsx"
+import Home from "./pages/Vans/Home.jsx"
+import About from "./pages/Vans/About.jsx"
 import Vans from "./pages/Vans.jsx"
 import VanDetail from "./pages/VanDetail.jsx"
 import Layout from "./components/Layout.jsx"
-import Dashboard from "./pages/Dashboard.jsx"
-import Income from "./pages/Income.jsx"
-import Reviews from "./pages/Reviews.jsx"
-import HostLayout  from "./pages/HostLayout.jsx"
+import Dashboard from "./pages/Host/Dashboard.jsx"
+import Income from "./pages/Host/Income.jsx"
+import Reviews from "./pages/Host/Reviews.jsx"
+import HostLayout  from "./components/HostLayout.jsx"
 
 import { startMirage } from '../server.js';
 
