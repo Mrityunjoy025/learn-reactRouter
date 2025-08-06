@@ -1,4 +1,4 @@
-export default function Host(){
+export default function Reviews(){
     return (
         <h1>Hello, this is the Host-Review page!</h1>
     )

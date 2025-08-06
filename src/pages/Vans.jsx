@@ -11,8 +11,7 @@ React.useEffect(() => {
     .then(res => res.json())
     .then(data => setVanData(data.vans))
 }, [])
-
-
+console.log(vanData)
 
 const vanElements = vanData.map(vans => (
   <div key={vans.id} className="van-tile">

@@ -6,11 +6,12 @@ export default function vanDetail(){
    const [vanData, setVanData] = React.useState(null)
    
    React.useEffect(()=>{
-    console.log("Effect Working.")
-    fetch(`/api/vans/${params.id}`)
+   fetch(`/api/vans/${params.id}`)
     .then(res => res.json())
     .then(data => setVanData(data.vans))
     },[params.id])
+
+    console.log(vanData)
   
    return (
     <div className="van-detail-container">
